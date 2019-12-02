@@ -1,0 +1,13 @@
+# Before using the scripts below, type in "pip install awscli" in Terminal, and run "aws configur" 
+# to write in AWS Access Key ID,AWS Secret Access Key, Default region name, and Default output format [None]: 
+
+# S3
+# 1. Upload a file
+import boto3
+s3 = boto3.client('s3')
+# change the target file name, bucket name and save name
+source_filename = 'S3_testfile1.txt'
+bucket_name = 'jingwen-exercise'
+source_savename = 'S3_testfile.txt'
+# upload your file into s3 bucket
+s3.upload_file(source_filename, bucket_name, source_savename)
